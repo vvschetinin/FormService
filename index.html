@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Add Icons -->
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="160x112" href="/apple-touch-icon.png" />
+    <title>Отправка формы заявки</title>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <header class="header"></header>
+
+      <main class="site-content">
+        <div class="start-project-overlay is-active">
+          <div class="wrapper">
+            <div class="container--middle inner">
+              <div class="row justify-center">
+                <div class="col-100 col-xxl-90">
+                  <!-- Form title -->
+                  <h2 class="h1-inner deco-line lh-1 color-black">Оставить заявку</h2>
+                  <div class="description-form">
+                    Пожалуйста, заполните форму, чтобы мы могли оперативно связаться с вами. Укажите марку и год выпуска оборудования / техники, а также кратко опишите
+                    характер работ — это поможет нам быстрее подготовить решение под вашу задачу.
+                    <span>
+                      При необходимости отправить файлы, текст со ссылками и изображения - просим воспользоваться электронной почтой
+                      <a href="mailto:info@nvp-diamet.ru">info@nvp-diamet.ru</a>
+                    </span>
+                  </div>
+                  <!-- The form -->
+                  <form action="#" id="modal-form" class="form-overlay modal-form">
+                    <div class="form-body">
+                      <div class="success"><span></span></div>
+                      <!-- Form fields -->
+                      <ul class="form-fields">
+                        <li>
+                          <div class="input-container">
+                            <input name="name" type="text" value="" class="large" required placeholder="Ваше имя *" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-container">
+                            <input name="phone" type="tel" data-phone-pattern value="" class="large" required placeholder="Номер телефона *" inputmode="numeric" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-container">
+                            <input name="email" type="email" value="" class="large" placeholder="E-mail" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-container">
+                            <input name="mark" type="text" value="" class="large" placeholder="Марка техники" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-container">
+                            <input
+                              name="year"
+                              type="text"
+                              inputmode="numeric"
+                              class="large"
+                              maxlength="4"
+                              placeholder="Год выпуска"
+                              min="1980"
+                              max="2025"
+                              value=""
+                              title="Введите год от 1980 до 2025" />
+                          </div>
+                        </li>
+                        <li>
+                          <div class="input-container area-container">
+                            <textarea name="message" id="message-contact" rows="7" required placeholder="Краткое описание требуемых работ *"></textarea>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- End Form fields -->
+                      <div class="checkbox-container flex">
+                        <input type="checkbox" name="formcheck" id="form-checkbox" value="" />
+                        <div class="label">
+                          <label for="form-checkbox">Я согласен(на) на обработку персональных данных и принимаю условия</label>
+                          <a href="/pages/privacy/privacy.pdf" download target="_blank">Политики конфиденциальности</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-footer mb-1">
+                      <button class="form-btn" name="formbutton" id="form-submit-button" disabled="true">Отправить</button>
+                      <input type="hidden" class="form-hidden" name="project_name" value="Сайт Владлена Щетинина" />
+                      <input type="hidden" class="form-hidden" name="form_subject" value="Сообщение с модальной формы обратной связи" />
+                      <input type="text" class="helpmess" name="" value="" aria-hidden="true" autocomplete="off" />
+                      <input type="text" class="form-target_page-text" name="" value="" aria-hidden="true" autocomplete="off" />
+                      <input type="number" class="form-target_page-number" name="" value="" aria-hidden="true" autocomplete="off" />
+                      <input type="email" class="form-target_page-email" name="" value="" aria-hidden="true" autocomplete="off" />
+                      <input type="tel" class="form-target_page-phone" name="" value="" aria-hidden="true" autocomplete="off" />
+                    </div>
+                  </form>
+                  <!-- End Form -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer"></footer>
+    </div>
+
+    <script type="module" crossorigin src="/src/main.ts"></script>
+  </body>
+</html>
