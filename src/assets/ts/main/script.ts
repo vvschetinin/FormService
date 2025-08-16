@@ -32,11 +32,6 @@ if (form && overlay) {
         setTimeout(() => {
           successDiv.classList.remove("success-mail");
           successDiv.style.display = "none";
-
-          // Через 1.5 секунды после исчезновения сообщения — закрываем окно
-          setTimeout(() => {
-            overlay.classList.remove("is-active");
-          }, 1000); // задержка после исчезновения сообщения
         }, 4000);
       }
     } catch (error) {
