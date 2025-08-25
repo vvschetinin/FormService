@@ -8,12 +8,16 @@ if (form && overlay) {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("sendform.php", {
+      // ИЗМЕНЕНИЕ: Добавлен слэш перед именем файла
+      const response = await fetch("/sendform.php", {
         method: "POST",
         body: formData,
       });
 
-      if (!response.ok) throw new Error(response.statusText);
+      if (!response.ok) {
+        // Улучшаем обработку ошибок: выводим статус ответа
+        throw new Error(`Ошибка сети: ${response.status} ${response.statusText}`);
+      }
 
       const result = await response.text();
 
@@ -31,13 +35,13 @@ if (form && overlay) {
           successDiv.classList.remove("success-mail");
           successDiv.style.display = "none";
 
-          // Через 1.5 секунды после исчезновения сообщения — закрываем окно
           setTimeout(() => {
             overlay.classList.remove("is-active");
-          }, 1000); // задержка после исчезновения сообщения
+          }, 1000);
         }, 4000);
       }
     } catch (error) {
+      console.error("Ошибка отправки формы:", error); // Добавляем вывод в консоль для отладки
       alert(`Ошибка отправки формы: ${error instanceof Error ? error.message : "Неизвестная ошибка"}`);
     }
   });
